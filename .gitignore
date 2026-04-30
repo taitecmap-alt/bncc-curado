@@ -1,0 +1,78 @@
+# ============================================================================
+# .gitignore para bncc-curado
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Sistema operacional
+# ----------------------------------------------------------------------------
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.Trash-*
+.directory
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ----------------------------------------------------------------------------
+# Editores e IDEs
+# ----------------------------------------------------------------------------
+
+# Vim
+*.swp
+*.swo
+*.swn
+.*.swp
+.*.swo
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (IntelliJ, PyCharm, WebStorm, etc)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ----------------------------------------------------------------------------
+# Arquivos temporários e logs
+# ----------------------------------------------------------------------------
+
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+
+# ----------------------------------------------------------------------------
+# Específicos do projeto
+# ----------------------------------------------------------------------------
+
+# Arquivos de teste/scratch (não comitar)
+scratch/
+sandbox/
+tmp/
+
+# Outputs intermediários (se gerarmos PDFs/CSVs locais não-versionados)
+*.csv.tmp
+*.pdf.draft
