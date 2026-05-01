@@ -4,7 +4,9 @@
     "data_extracao": "2026-04-30",
     "total_habilidades": 247,
     "escopo": "Matemática Fundamental (1º ao 9º ano)",
-    "schema_versao": "1.0.0"
+    "schema_versao": "1.0.0",
+    "data_validacao": "2026-04-30",
+    "fonte_validacao": "PDF oficial BNCC - basenacionalcomum.mec.gov.br"
   },
   "habilidades": [
     {
@@ -171,7 +173,7 @@
     },
     {
       "codigo": "EF02MA06",
-      "descricao": "Resolver e elaborar problemas de adição e de subtração, envolvendo números de até três ordens, com os significados de juntar, acrescentar, separar, retirar, utilizando estratégias pessoais ou convencionais.",
+      "descricao": "Resolver e elaborar problemas de adição e de subtração, envolvendo números de até três ordens, com os significados de juntar, acrescentar, separar, retirar, utilizando estratégias pessoais.",
       "ano": 2,
       "disciplina": "Matemática"
     },
@@ -303,7 +305,7 @@
     },
     {
       "codigo": "EF03MA05",
-      "descricao": "Utilizar diferentes procedimentos de cálculo mental e escrito para resolver problemas significativos envolvendo adição e subtração com números naturais.",
+      "descricao": "Utilizar diferentes procedimentos de cálculo mental e escrito, inclusive os convencionais, para resolver problemas significativos envolvendo adição e subtração com números naturais.",
       "ano": 3,
       "disciplina": "Matemática"
     },
