@@ -2,86 +2,112 @@
 
 > Catálogo curado das habilidades da BNCC (Base Nacional Comum Curricular) brasileira, em formato JSON estruturado e validado, pronto para uso em sistemas educacionais.
 
+**Status:** Estável | **Versão atual:** v1.0.0 (2026-04-30) | **Habilidades:** 247 | **Validação:** 100%
+
 ## 📖 Sobre
 
 Este repositório contém uma versão estruturada e curada das habilidades definidas pela **Base Nacional Comum Curricular (BNCC)**, documento oficial do Ministério da Educação (MEC) que estabelece as aprendizagens essenciais para a Educação Básica no Brasil.
 
-A BNCC é distribuída oficialmente pelo MEC como documento PDF de aproximadamente 600 páginas. Este repositório oferece uma versão **estruturada em JSON**, **validada amostralmente** contra a fonte oficial, **versionada** e **pronta para consumo programático**.
+A BNCC é distribuída oficialmente pelo MEC como documento PDF de aproximadamente 600 páginas. Este repositório oferece uma versão **estruturada em JSON**, **validada integralmente** contra a fonte oficial, **versionada** e **pronta para consumo programático**.
 
-## 🎯 Escopo atual
+## 🎯 Escopo
 
-| Versão | Conteúdo                                    | Status      |
-|--------|---------------------------------------------|-------------|
-| v1.0.0 | Matemática Fundamental (1º ao 9º ano)      | Em curadoria|
-| v2.0.0 | Acréscimo de pré-requisitos e sucessores    | Planejado   |
-| v3.0.0 | Outras áreas (Português, Ciências, etc)     | Planejado   |
+- **v1.0.0** — Matemática Fundamental (1º ao 9º ano) — Lançado em 2026-04-30
+- **v2.0.0** — Acréscimo de pré-requisitos e sucessores — Planejado
+- **v3.0.0** — Outras áreas (Português, Ciências, etc) — Planejado
 
 ## 📂 Estrutura do repositório
 
-```
-bncc-curado/
-├── data/                                       # JSONs estruturados
-│   └── habilidades-mat-fundamental.json        # ~247 habilidades de Mat Fund
-├── CHANGELOG.md                                # Histórico de versões
-├── LICENSE                                     # MIT
-└── README.md                                   # Este arquivo
-```
+- `data/habilidades-mat-fundamental.json` — 247 habilidades
+- `CHANGELOG.md` — Histórico de versões
+- `LICENSE` — MIT
+- `README.md` — Este arquivo
 
 ## 📊 Schema dos dados
 
-Cada habilidade é representada como objeto JSON com a seguinte estrutura:
+Cada habilidade é representada como objeto JSON:
 
-```json
-{
-  "codigo": "EF06MA01",
-  "descricao": "Comparar, ordenar, ler e escrever números naturais...",
-  "ano": 6,
-  "disciplina": "Matemática"
-}
-```
-
-### Campos
-
-- **codigo** (string): código oficial BNCC, formato `EFXXMAYY` (Ensino Fundamental)
+- **codigo** (string): código oficial BNCC, formato EFXXMAYY
 - **descricao** (string): descrição da habilidade conforme texto oficial
 - **ano** (number): ano escolar (1 a 9 para Fundamental)
-- **disciplina** (string): nome da disciplina
+- **disciplina** (string): nome da disciplina ("Matemática")
+
+### Distribuição por ano (v1.0.0)
+
+- 1º ano: 22 habilidades
+- 2º ano: 23 habilidades
+- 3º ano: 28 habilidades
+- 4º ano: 28 habilidades
+- 5º ano: 25 habilidades
+- 6º ano: 34 habilidades
+- 7º ano: 37 habilidades
+- 8º ano: 27 habilidades
+- 9º ano: 23 habilidades
+- **Total: 247 habilidades**
 
 ## 🔍 Origem dos dados
 
 **Fonte primária:** [catalogobncc.github.io/metadados](https://catalogobncc.github.io/metadados/), versão de março/2022.
 
-**Fonte de validação:** PDF oficial da BNCC publicado pelo MEC (versão homologada de 2017 para Educação Infantil e Ensino Fundamental).
+**Fonte de validação:** PDF oficial da BNCC publicado pelo MEC (versão homologada de 2017 para Educação Infantil e Ensino Fundamental, 600 páginas).
 
 **Processo:**
+
 1. Extração automatizada da fonte primária
-2. Estruturação em JSON
-3. Validação amostral de 20 habilidades aleatórias contra PDF oficial
-4. Curadoria manual de eventuais discrepâncias
+2. Estruturação em JSON com schema validado
+3. Validação textual completa contra PDF oficial
+4. Curadoria manual de discrepâncias detectadas
+
+## 🔬 Validação
+
+### Validação técnica automatizada
+
+Todas 247 habilidades passaram por 7 verificações automatizadas:
+
+- Schema correto em 247/247 habilidades
+- Formato dos códigos validado (regex EFXXMAYY)
+- Consistência ano (código vs campo): 247/247
+- Disciplina sempre Matemática
+- Descrições não vazias
+- Sequência completa por ano
+- Zero duplicatas
+
+### Validação textual contra PDF oficial MEC
+
+Todas 247 habilidades comparadas individualmente contra o PDF oficial:
+
+- 245 idênticas literalmente ao PDF (99.2%)
+- 2 com diferenças apenas de extração do PDF (0.8%)
+- **Total fiel ao PDF oficial: 247/247 (100%)**
+
+Detectadas e corrigidas 2 discrepâncias entre fonte primária e PDF MEC:
+
+- **EF02MA06** (2º ano): removido texto extra ausente no PDF
+- **EF03MA05** (3º ano): adicionado trecho presente no PDF
+
+Detalhes completos no CHANGELOG.md.
 
 ## ⚠️ Limitações conhecidas
 
-Esta versão (v1.0.0) tem as seguintes limitações documentadas:
-
-- **Sem grafo de pré-requisitos:** as habilidades não estão conectadas via relações de dependência (será adicionado em v2.0.0)
-- **Apenas Matemática:** outras disciplinas serão adicionadas em versões futuras
-- **Apenas Fundamental:** Ensino Médio e Educação Infantil ficam fora do escopo inicial
-- **Sem unidades temáticas:** o agrupamento por temas (Números, Geometria, etc) não está incluído
+- Sem grafo de pré-requisitos (planejado para v2.0.0)
+- Apenas Matemática (outras disciplinas planejadas)
+- Apenas Ensino Fundamental
+- Sem agrupamento por unidades temáticas
 
 ## 🤝 Como contribuir
 
-Contribuições são bem-vindas, especialmente:
+Contribuições bem-vindas:
 
-- Correções em descrições de habilidades
-- Adição de pré-requisitos validados pedagogicamente
+- Correções em descrições
+- Adição de pré-requisitos validados
 - Tradução para outros formatos (CSV, XML, YAML)
-- Validação amostral contra outras fontes
+- Validação contra outras fontes
 
-Por favor, abra uma **Issue** descrevendo a contribuição antes de enviar Pull Request.
+Por favor, abra Issue antes de Pull Request.
 
 ## 📜 Licença
 
-Este projeto está sob licença [MIT](LICENSE).
+Este projeto está sob licença MIT (ver LICENSE).
 
 A BNCC em si é documento público do MEC, disponível em [basenacionalcomum.mec.gov.br](https://basenacionalcomum.mec.gov.br/).
 
@@ -89,7 +115,6 @@ A BNCC em si é documento público do MEC, disponível em [basenacionalcomum.mec
 
 - [BNCC oficial - MEC](https://basenacionalcomum.mec.gov.br/)
 - [Catalogo BNCC (fonte primária)](https://catalogobncc.github.io/metadados/)
-- [InovaSpark](https://github.com/taitecmap-alt) — projeto que originou esta curadoria
 
 ## 👥 Mantenedores
 
@@ -98,4 +123,4 @@ A BNCC em si é documento público do MEC, disponível em [basenacionalcomum.mec
 
 ---
 
-**Status:** Em desenvolvimento ativo • **Versão atual:** Em curadoria para v1.0.0
+**v1.0.0** | 2026-04-30 | 247 habilidades | Validação 100% vs PDF MEC
